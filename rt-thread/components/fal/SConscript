@@ -1,0 +1,12 @@
+
+from building import *
+import rtconfig
+
+cwd     = GetCurrentDir()
+src     = Glob('src/*.c')
+CPPPATH = [cwd + '/inc']
+
+
+group = DefineGroup('Fal', src, depend = ['RT_USING_FAL'], CPPPATH = CPPPATH)
+
+Return('group')
